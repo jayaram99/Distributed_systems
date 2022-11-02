@@ -1,0 +1,9 @@
+# README
+*Implementation of a vector clock for three nodes
+
+## Execution steps:
+* Open three command prompts and run all the three python files using py <filename>.py
+* Enter the number 1 to send messages.
+* Choose the number 1 or 2 or 3 to send the messages to nodes 1,2,3 respectively.
+* Enter '-' to send the messages again.
+* After sending and receiving messages the vector clock can be seen updated.
