@@ -38,11 +38,14 @@ def send(p1):
             #print("vector clock before sending to p2",l)
             while(1):
                 data=input()
+                
                 if pck or '-' not in data[1:]:
-                    f = open("TC.txt","a")
-                    f.write(data)
-                    f.write("\n")
-                    f.close()
+                    f = pd.read_csv("TC.csv")
+                    df = pd.DataFrame({'message': [data]})
+                    df.to_csv(index=False)
+##                    f.write(data)
+##                    f.write("\n")
+##                    f.close()
                 pmc=data[1:]
                 tid=data[0]
                 data=list(data)
@@ -176,15 +179,19 @@ def rec(p1):
             
             
             if 'y' and 'e' and 's' in s1:
-                f = open("TC.txt","a")
+                #f = open("TC.txt","a")
+                f = pd.read_csv("TC.csv")
                 #f.write("YES\n")
                 l[3]=l[3]+1
             if l[3]==2:
                 print(l[3])
                 print(l[4])
-                f.write("committed tid:")
-                f.write(str(s1[0])+"\n")
-                f.close()
+##                f.write("committed tid:")
+##                f.write(str(s1[0])+"\n")
+##                f.close()
+                df = pd.DataFrame({'tid': [str(s1[0])]})
+                df.to_csv(index=False)
+                
     ##      data='committed'
     ##      data=bytes(data,'utf-8')
     ##      assert node1.send(data)
