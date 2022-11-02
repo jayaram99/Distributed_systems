@@ -12,12 +12,13 @@ def send(p1):
         n=int(input())
         if n==1:
             print("node3-->TC")
+            print(pc[0])
             sock1 = socket.socket()
 
             host1 = socket.gethostname()
             sock1.connect((host1, 1025))
             
-            if pc[0]==1:
+            if pc[1]==1:
                 
                 data="NO%"
                 data=list(data)
@@ -104,7 +105,7 @@ def rec(p1):
     
 def timer():
 
-    time.sleep(30)
+    time.sleep(60)
     
     ss = socket.socket()
     host = socket.gethostname()
